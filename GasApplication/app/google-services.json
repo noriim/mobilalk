@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "491345149269",
+    "project_id": "androidgas-1497c",
+    "storage_bucket": "androidgas-1497c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491345149269:android:e39d6c9b633802dbad83dc",
+        "android_client_info": {
+          "package_name": "com.example.gasapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnmZCAfO9ar7hXLhcHLPtmpSshAB5THQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

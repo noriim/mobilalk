@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Gas Application</string>
+    <string name="name">Név</string>
+    <string name="password">Jelszó</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="register">Regisztráció</string>
+    <string name="email">E-mail cím</string>
+    <string name="password_again">Jelszó újra</string>
+    <string name="cancel">Mégse</string>
+    <string name="registerSign">Regisztráció</string>
+    <string name="phone">Telefonszám</string>
+    <string name="address">Lakcím</string>
+    <string name="readingsText">Gázóra diktálásaim</string>
+    <string name="readingsValue">Mérőállás</string>
+    <string name="update">Update</string>
+    <string name="delete">Törlés</string>
+    <string name="recordsSign">Bejelentett mérőállásaim</string>
+    <string name="readingsWrong">Állapot</string>
+    <string name="listedRecords">Diktálásaim</string>
+    <string name="contacts">Hibabejelentés</string>
+    <string name="viszlaturam">Kijelentkezés</string>
+    <string name="recordingNew">Új diktálás</string>
+    <string name="sziauram">Üdvözöljük!</string>
+    <string name="addRecord">Új diktálás</string>
+    <string name="addValueText">Mérőállás</string>
+    <string name="addValue">Adja meg mérőállását!</string>
+    <string name="chooseDateAndTime">Mérőállás dátuma és ideje</string>
+    <string name="datePicker">Válasszon dátumot!</string>
+    <string name="timePicker">Válasszon időt!</string>
+    <string name="addRecordButton">Diktálás küldése</string>
+    <string name="readingsDateAndTime">Mérés ideje</string>
+    <string-array name="phoneModes">
+        <item>Otthoni</item>
+        <item>Munkahelyi</item>
+        <item>Mobil</item>
+        <item>Egyéb</item>
+    </string-array>
+</resources>
