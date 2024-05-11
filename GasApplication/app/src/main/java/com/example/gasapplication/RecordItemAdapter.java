@@ -6,8 +6,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +35,12 @@ public class RecordItemAdapter extends RecyclerView.Adapter<RecordItemAdapter.Vi
         RecordItem currentItem = mRecordItemsData.get(position);
 
         holder.bindTo(currentItem);
+
+        if(holder.getAdapterPosition() > lastPosition) {
+            Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.recycler_animation);
+            holder.itemView.startAnimation(animation);
+            lastPosition = holder.getAdapterPosition();
+        }
     }
 
     @Override
@@ -70,10 +76,10 @@ public class RecordItemAdapter extends RecyclerView.Adapter<RecordItemAdapter.Vi
             mWrongText.setText((currentItem.isWrong()? "Hiba bejelentve!" : "Nem jelentett be hibát."));
 
             itemView.findViewById(R.id.update).setOnClickListener(view ->
-                    ((RecordsListedActivity)mContext).updateAppointment(currentItem));
+                    ((ListedActivity)mContext).updateAppointment(currentItem));
 
             itemView.findViewById(R.id.delete).setOnClickListener(view ->
-                    ((RecordsListedActivity)mContext).deleteAppointment(currentItem));
+                    ((ListedActivity)mContext).deleteAppointment(currentItem));
         }
     }
 

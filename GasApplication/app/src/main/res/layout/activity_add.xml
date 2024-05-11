@@ -8,62 +8,63 @@
 
     <TextView
         android:id="@+id/addRecordTextView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/addRecord"
         android:textAlignment="center"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintVertical_bias="0.022" />
 
     <TextView
         android:id="@+id/addValueTextView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:ems="10"
+        android:ems="12"
         android:text="@string/addValueText"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/addRecordTextView"
-        app:layout_constraintVertical_bias="0.107"
-        tools:layout_editor_absoluteX="40dp" />
+        app:layout_constraintVertical_bias="0.099" />
 
     <EditText
         android:id="@+id/valueEditText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:ems="10"
+        android:ems="12"
         android:hint="@string/addValue"
         android:inputType="number"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addValueTextView"
-        app:layout_constraintVertical_bias="0.133"
-        tools:layout_editor_absoluteX="40dp" />
+        app:layout_constraintVertical_bias="0" />
 
 
     <TextView
         android:id="@+id/chooseDateTextView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:ems="10"
+        android:ems="12"
         android:text="@string/chooseDateAndTime"
         android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/valueEditText"
-        app:layout_constraintVertical_bias="0.098"
-        tools:layout_editor_absoluteX="10dp" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <LinearLayout
         android:id="@+id/datePickerLayout"
@@ -100,7 +101,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chooseDateTextView"
-        app:layout_constraintVertical_bias="0.234">
+        app:layout_constraintVertical_bias="0.25">
 
         <TextView
             android:id="@+id/dateChosenTextView"
@@ -124,7 +125,7 @@
 
     <Button
         android:id="@+id/appointmentBookButton"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="40dp"
@@ -134,26 +135,22 @@
         android:text="@string/addRecordButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addRecordTextView"
-        app:layout_constraintVertical_bias="0.795" />
+        app:layout_constraintVertical_bias="0.7" />
 
     <Button
         android:id="@+id/cancelButton"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginBottom="60dp"
         android:onClick="cancel"
         android:text="@string/cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appointmentBookButton"
-        app:layout_constraintVertical_bias="0.307" />
+        app:layout_constraintVertical_bias="0.2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

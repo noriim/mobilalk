@@ -88,14 +88,14 @@ public class NavigationScreenActivity extends AppCompatActivity {
     }
 
     public void toMyAppointments(View view) {
-        Intent intent = new Intent(this, RecordsListedActivity.class);
+        Intent intent = new Intent(this, ListedActivity.class);
         startActivity(intent);
     }
 
-//    public void toContacts(View view) {
-//        Intent intent = new Intent(this, ContactsActivity.class);
-//        startActivity(intent);
-//    }
+    public void toContacts(View view) {
+        Intent intent = new Intent(this, ContactsActivity.class);
+        startActivity(intent);
+    }
 
     public void signOut(View view) {
         Intent intent = new Intent(this, MainActivity.class);

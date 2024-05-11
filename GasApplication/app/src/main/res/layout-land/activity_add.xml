@@ -26,12 +26,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:ems="10"
+        android:ems="12"
         android:text="@string/addValueText"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/addRecordTextView"
         app:layout_constraintVertical_bias="0.116" />
@@ -41,12 +41,12 @@
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
-        android:ems="10"
+        android:ems="12"
         android:hint="@string/addValue"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addValueTextView"
         app:layout_constraintVertical_bias="0.0" />
@@ -55,12 +55,12 @@
         android:id="@+id/chooseDateTextView"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:ems="12"
         android:text="@string/chooseDateAndTime"
         android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/valueEditText"
         app:layout_constraintVertical_bias="0.05" />
@@ -104,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/datePickerLayout"
         app:layout_constraintTop_toBottomOf="@+id/chooseDateTextView"
-        app:layout_constraintVertical_bias="0.13">
+        app:layout_constraintVertical_bias="0.2">
 
         <TextView
             android:id="@+id/dateChosenTextView"
@@ -128,27 +128,22 @@
 
     <Button
         android:id="@+id/appointmentBookButton"
-        android:layout_width="0dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginBottom="60dp"
         android:onClick="getAppointment"
         android:text="@string/addRecordButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/datePickerLayout"
         app:layout_constraintVertical_bias="0.795" />
 
     <Button
         android:id="@+id/cancelButton"
-        android:layout_width="0dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="40dp"
         android:layout_marginBottom="40dp"
         android:onClick="cancel"
         android:text="@string/cancel"

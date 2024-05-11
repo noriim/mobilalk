@@ -21,20 +21,21 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Objects;
 
-public class RecordsListedActivity extends AppCompatActivity {
-    private static final String LOG_TAG = RecordsListedActivity.class.getName();
+public class ListedActivity extends AppCompatActivity {
+    private static final String LOG_TAG = ListedActivity.class.getName();
     private FirebaseUser user;
     private RecyclerView mRecyclerView;
     private ArrayList<RecordItem> recordItemsList;
     private RecordItemAdapter mAdapter;
     private FirebaseFirestore mStore;
     private CollectionReference mRecords;
+    private NotificationHandler mNotificationHandler;
     private int gridNumber = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.readings_listed);
+        setContentView(R.layout.activity_listed);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
@@ -54,7 +55,7 @@ public class RecordsListedActivity extends AppCompatActivity {
         mStore = FirebaseFirestore.getInstance();
         mRecords = mStore.collection("Records");
 
-        //mNotificationHandler = new NotificationHandler(this);
+        mNotificationHandler = new NotificationHandler(this);
 
         queryData();
     }
@@ -64,13 +65,12 @@ public class RecordsListedActivity extends AppCompatActivity {
 
         mRecords.orderBy("dateAndTime", Query.Direction.DESCENDING).limit(10).get().addOnSuccessListener(queryDocumentSnapshots -> {
             for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
-                Map<String, String> user1 = (Map<String, String>) document.get("user"); //bajvan
+                Map<String, String> user1 = (Map<String, String>) document.get("user");
                 String email = user1.get("email");
                 if (Objects.equals(email, user.getEmail())) {
                     RecordItem record = document.toObject(RecordItem.class);
                     record.setId(document.getId());
                     recordItemsList.add(record);
-                    Log.d(LOG_TAG, "DENYÖL MY BELOVED!!! :DDDDDD");
                 }
             }
 
@@ -90,7 +90,7 @@ public class RecordsListedActivity extends AppCompatActivity {
             Log.d(LOG_TAG, "Record deletion failed");
         });
 
-        //mNotificationHandler.send("Időpont törölve!");
+        mNotificationHandler.send("Mérőállás törölve!");
         queryData();
     }
 
@@ -102,7 +102,7 @@ public class RecordsListedActivity extends AppCompatActivity {
         }
         else {
             mRecords.document(record._getId()).update("wrong", true);
-            //mNotificationHandler.send("Sürgősség hozzáadva! Kollégáink a megadott időpont előtt felkeresik ez ügyben!");
+            mNotificationHandler.send("Hiba bejelentve! Kollégáink értesítve lettek, kérjük türelemmel várja felkeresésüket!");
             queryData();
         }
     }

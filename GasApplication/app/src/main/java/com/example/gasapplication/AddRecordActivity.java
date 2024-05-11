@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -43,7 +42,7 @@ public class AddRecordActivity extends AppCompatActivity implements AdapterView.
     private CollectionReference mUsers;
     private CollectionReference mRecords;
 
-    //private NotificationHandler mNotificationHandler;
+    private NotificationHandler mNotificationHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +86,7 @@ public class AddRecordActivity extends AppCompatActivity implements AdapterView.
         timeChosenTV = findViewById(R.id.timeChosenTextView);
 
 
-        //mNotificationHandler = new NotificationHandler(this);
+        mNotificationHandler = new NotificationHandler(this);
     }
 
     public void getAppointment(View view) {
@@ -109,13 +108,13 @@ public class AddRecordActivity extends AppCompatActivity implements AdapterView.
 
             RecordItem record = new RecordItem(loggedInUser, value, dateAndTime);
             mRecords.add(record);
-            //mNotificationHandler.send("Új időpont rögzítve!");
+            mNotificationHandler.send("Mérőállás bejelentve!");
             toMyAppointments();
         }
     }
 
     public void toMyAppointments() {
-        Intent intent = new Intent(this, RecordsListedActivity.class);
+        Intent intent = new Intent(this, ListedActivity.class);
         startActivity(intent);
     }
 

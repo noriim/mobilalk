@@ -11,131 +11,131 @@
         android:id="@+id/textViewRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
         android:text="@string/registerSign"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.002" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextUserName"
-        android:layout_width="600dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/name"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editTextPassword"
+        app:layout_constraintEnd_toStartOf="@+id/editTextEmail"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRegister"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="600dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editTextPasswordAgain"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUserName"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintStart_toEndOf="@+id/editTextUserName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="600dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editTextPhoneNumber"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPasswordAgain"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextUserName" />
 
     <EditText
         android:id="@+id/editTextPasswordAgain"
-        android:layout_width="600dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="@string/password_again"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editTextAddress"
+        app:layout_constraintStart_toEndOf="@+id/editTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <EditText
         android:id="@+id/editTextAddress"
-        android:layout_width="600dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="@string/address"
         android:inputType="textPostalAddress|textMultiLine"
         android:maxLines="2"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextPhoneNumber"
+        app:layout_constraintBottom_toTopOf="@id/cancelButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordAgain"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordAgain" />
 
     <EditText
         android:id="@+id/editTextPhoneNumber"
-        android:layout_width="600dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="@string/phone"
         android:inputType="phone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/registButton"
+        app:layout_constraintEnd_toStartOf="@+id/editTextAddress"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAddress"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <Spinner
         android:id="@+id/phoneSpinner"
-        android:layout_width="600dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhoneNumber"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52" />
 
     <Button
         android:id="@+id/registButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="32dp"
         android:onClick="register"
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintEnd_toStartOf="@+id/cancelButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneSpinner"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhoneNumber" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/cancelButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="32dp"
+
         android:onClick="cancel"
         android:text="@string/cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.92"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneSpinner"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintStart_toEndOf="@id/registButton"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddress" />
 </androidx.constraintlayout.widget.ConstraintLayout>
