@@ -139,4 +139,16 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         Log.i(LOG_TAG, "onRestart");
     }
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Kilépés").setMessage("Biztosan be szeretné zárni az applikációt?")
+                .setPositiveButton("Igen", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finishAffinity();
+                        Log.d(LOG_TAG, "Exit successful");
+                    }
+                }).setNegativeButton("Nem", null).show();
+    }
 }

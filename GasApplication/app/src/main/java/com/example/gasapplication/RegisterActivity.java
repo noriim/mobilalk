@@ -103,22 +103,23 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             new AlertDialog.Builder(this)
                     .setTitle("Regisztráció").setMessage("A megadott jelszavak nem egyeznek!")
                     .setPositiveButton("OK", null).show();
+        } else {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Log.d(LOG_TAG, "User created successfully");
+                        User user = new User(name, email, address, phone, phoneType);
+                        mUsers.add(user);
+                        loggedIn();
+                    } else {
+                        Log.d(LOG_TAG, "User wasn't created successfully.");
+                        Toast.makeText(RegisterActivity.this, "User wasn't created successfully." + task.getException(), Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
         }
 
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Log.d(LOG_TAG, "User created successfully");
-                    User user = new User(name, email, address, phone, phoneType);
-                    mUsers.add(user);
-                    loggedIn();
-                } else {
-                    Log.d(LOG_TAG, "User wasn't created successfully.");
-                    Toast.makeText(RegisterActivity.this, "User wasn't created successfully." + task.getException(), Toast.LENGTH_LONG).show();
-                }
-            }
-        });
     }
 
     public void cancel(View view) {
